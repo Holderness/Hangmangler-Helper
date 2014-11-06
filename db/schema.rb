@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20141105222540) do
   create_table "hangmans", force: true do |t|
     t.integer  "word_id"
     t.integer  "user_id"
+    t.string   "incorrect_guesses"
+    t.string   "game_state"
     t.boolean  "complete"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -27,6 +29,8 @@ ActiveRecord::Schema.define(version: 20141105222540) do
   create_table "users", force: true do |t|
     t.string   "username"
     t.string   "password_hash"
+    t.integer  "hangmans_won_id"
+    t.integer  "tic_tac_toes_won_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

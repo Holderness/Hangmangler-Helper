@@ -6,7 +6,7 @@ $('.keep').each(function(i, e){
 	animals.push(e.firstElementChild.text);
 });
 
-animals = ["Amur Leopard", "Black Rhino", "Cross River Gorilla", "Hawksbill Turtle", "Javan Rhino", "Leatherback Turtle", "Mountain Gorilla", "Saola", "South China Tiger", "Sumatran Elephant ", "Sumatran Orangutan", "Sumatran Rhino", "Sumatran Tiger", "Vaquita", "Western Lowland Gorilla", "Yangtze Finless Porpoise", "African Wild Dog", "Amur Tiger", "Asian Elephant", "Bengal Tiger", "Black Spider Monkey", "Black-footed Ferret", "Blue Whale", "Bluefin Tuna", "Bonobo", "Bornean Orangutan", "Borneo Pygmy Elephant", "Chimpanzee", "Eastern Lowland Gorilla", "Fin Whale", "Galápagos Penguin", "Ganges River Dolphin", "Giant Panda", "Green Turtle", "Hector's Dolphin", "Humphead Wrasse", "Indian Elephant", "Indochinese Tiger", "Indus River Dolphin", "Loggerhead Turtle", "Malayan Tiger", "North Atlantic Right Whale", "Orangutan", "Sea Lions", "Sei Whale", "Snow Leopard", "Sri Lankan Elephant", "Tiger", "Whale", "African Elephant"]
+
 
 
 
@@ -14,13 +14,17 @@ animals = ["Amur Leopard", "Black Rhino", "Cross River Gorilla", "Hawksbill Turt
 
 function createsDisplay(){
 
-
-	$('.hangman').append("<div>                       </div>".replace(/ /g, '&nbsp;&nbsp;'));
-	$('.hangman').append("<div>                       </div>".replace(/ /g, '&nbsp;&nbsp;'));
+  $('.hangman').append("<div>                        </div>".replace(/ /g, '&nbsp;&nbsp;'));
+  $('.hangman').append("<div>                        </div>".replace(/ /g, '&nbsp;&nbsp;'));
+	$('.hangman').append("<div>                        </div>".replace(/ /g, '&nbsp;&nbsp;'));
+  $('.hangman').append("<div>                        </div>".replace(/ /g, '&nbsp;&nbsp;'));
+  $('.hangman').append("<div>                        </div>".replace(/ /g, '&nbsp;&nbsp;'));
+	$('.hangman').append("<div>                        </div>".replace(/ /g, '&nbsp;&nbsp;'));
+	$('.hangman').append("<div>                        </div>".replace(/ /g, '&nbsp;&nbsp;'));
 	$('.hangman').append("<div>                     /||</div>".replace(/ /g, '&nbsp;&nbsp;'));
 	$('.hangman').append("<div>           _________//||</div>".replace(/ /g, '&nbsp;&nbsp;'));
 	$('.hangman').append("<div>          |        // ||</div>".replace(/ /g, '&nbsp;&nbsp;'));
-	$('.hangman').append("<div>                   || ||</div>".replace(/ /g, '&nbsp;&nbsp;'));
+	$('.hangman').append("<div>          |        || ||</div>".replace(/ /g, '&nbsp;&nbsp;'));
 	$('.hangman').append("<div>                   || ||</div>".replace(/ /g, '&nbsp;&nbsp;'));
   $('.hangman').append("<div>                   || ||</div>".replace(/ /g, '&nbsp;&nbsp;')); 
 	$('.hangman').append("<div>                   || ||</div>".replace(/ /g, '&nbsp;&nbsp;'));
@@ -32,13 +36,108 @@ function createsDisplay(){
 	$('.hangman').append("<div>                   || ||</div>".replace(/ /g, '&nbsp;&nbsp;'));   
   $('.hangman').append("<div>                   || ||</div>".replace(/ /g, '&nbsp;&nbsp;'));                             
 	$('.hangman').append("<div>  _________________|| ||</div>".replace(/ /g, '&nbsp;&nbsp;'));
-	$('.hangman').append("<div> /                    ||</div>".replace(/ /g, '&nbsp;&nbsp;'));
+	$('.hangman').append("<div> /                   \\||</div>".replace(/ /g, '&nbsp;&nbsp;'));
 	$('.hangman').append("<div>/_____________________||</div>".replace(/ /g, '&nbsp;&nbsp;'));
 	$('.hangman').append("<div>|_____________________||</div>".replace(/ /g, '&nbsp;&nbsp;'));
 
 }
 
 
+function createsCowDisplay(){
+
+	$('.cows').append("<div>          (__)             (__)</div>".replace(/ /g, '&nbsp;&nbsp;'));   
+  $('.cows').append("<div>          (oo)             (oo)</div>".replace(/ /g, '&nbsp;&nbsp;'));                             
+	$('.cows').append("<div>   /-----------\\/       /---------\\/ </div>".replace(/ /g, '&nbsp;&nbsp;'));
+	$('.cows').append("<div>  / |     ||       / |     ||  </div>".replace(/ /g, '&nbsp;&nbsp;'));
+	$('.cows').append("<div> *  ||-------||      *  ||W---||  </div>".replace(/ /g, '&nbsp;&nbsp;'));
+	$('.cows').append("<div>    ^^    ^^         ^^    ^^  </div>".replace(/ /g, '&nbsp;&nbsp;'));
+
+}
+ //          (__)             (__)   
+ //          (oo)             (oo)     
+ //   /-------\/       /-------\/     
+ //  / |     ||       / |     ||      
+ // *  ||----||      *  ||W---||     
+ //    ^^    ^^         ^^    ^^   
+
+
+
+
+// class='head_top'
+//  class='head_face'
+//   class='left_arm right_arm'
+//    class='torso'
+//    class='left_leg right_leg'
+
+// prepend
+
+
+
+
+function insert_head(){
+	$('.hangman div')[11].innerHTML = "        (ಠ_ಠ)  &nbsp;    || ||".replace(/ /g, '&nbsp;&nbsp;');
+}
+
+function insert_body(){
+	$('.hangman div')[12].innerHTML = "      &nbsp;   ( )   &nbsp;    || ||".replace(/ /g, '&nbsp;&nbsp;');
+
+}
+
+function insert_left_arm(){
+	$('.hangman div')[12].innerHTML = "        <( )   &nbsp;    || ||".replace(/ /g, '&nbsp;&nbsp;');
+
+}
+
+function insert_right_arm(){
+	$('.hangman div')[12].innerHTML = "        <( )>      || ||".replace(/ /g, '&nbsp;&nbsp;');
+
+}
+
+
+function insert_left_leg(){
+	$('.hangman div')[13].innerHTML = "     &nbsp;    |    &nbsp;    || ||".replace(/ /g, '&nbsp;&nbsp;');
+
+}
+
+function insert_right_leg(){
+	$('.hangman div')[13].innerHTML = "     &nbsp;    ||    &nbsp;   || ||".replace(/ /g, '&nbsp;&nbsp;');
+
+}
+
+function insert_cows(){
+  
+}
+
+
+ //          (__)             (__)   
+ //          (oo)             (oo)     
+ //   /-------\/       /-------\/     
+ //  / |     ||       / |     ||      
+ // *  ||----||      *  ||W---||     
+ //    ^^    ^^         ^^    ^^   
+
+
+/// add creaking sounds as the gallows gets bent around by the code
+
+
+
+
+
+ //          (__)             (__)   
+ //          (oo)             (oo)     
+ //   /-------\/       /-------\/     
+ //  / |     ||       / |     ||      
+ // *  ||----||      *  ||W---||     
+ //    ^^    ^^         ^^    ^^    
+
+// '  |  '
+// ' _&perp;_  '
+// '(ಠ_ಠ) '
+// ' < >  '
+// '  |   '
+// ' /\\  '
+// '     '
+// '     '
 
 
 
@@ -46,4 +145,5 @@ function createsDisplay(){
 
 $(function(){
   createsDisplay();
+  createsCowDisplay();
 })
