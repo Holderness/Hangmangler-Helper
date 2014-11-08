@@ -7,14 +7,83 @@ nav * {
 	display: inline-block;
 }
 
+table {
+	border: 1.8px dashed;
+}
+
+span {
+	border: 1.8px dashed;
+	padding: 1em;
+}
+
+span #right-cow {
+	padding-left: 3em;
+}
+
+#scene {
+	float: left;
+	width: 55em;
+}
 
 .hangman {
 	float: right;
-	padding-right: 25em;
+}
+
+#new-game {
+	-webkit-appearance: none;
+	background-color: cornsilk;
+	border: 1.8px dashed;
+	font-size: 20px;
+	font-family: Garamond;
+	float: right;
+	margin-right: 8em;
+	width: 100px;
+	height: 50px;
+
+}
+
+#game-over {
+	padding-top: 1em;
 }
 
 .cows {
-	margin-top: 350px;
+	margin-top: 3em;
 	float: left;
-	padding-left: 10em;
+	padding-left: 5em;
+	width: 35em;
+}
+
+#guess-display {
+	margin-top: .7em;
+	float: right;
+	width: 20em;
+}
+
+.game-state {
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+#incorrect-guesses {
+}
+
+#guess-button {
+	-webkit-appearance: none;
+	background-color: cornsilk;
+	border: 1.8px dashed;
+	font-family: Garamond;
+	float: left;
+	font-size: 20px;
+	text-align: center;
+	width: 100px;
+	height: 50px;
+}
+
+.text-box {
+	border: 1.8px dashed;
+	margin-left: 20px;
+	background-color: cornsilk;
+	text-align: center;
+	width: 100px;
+	font-size: 40px;
 }

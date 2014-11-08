@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   include BCrypt
-  has_many :hangmans
+  has_many :hangmen
+  has_many :words, through: :hangmen
 
   validates :username, uniqueness: true
 

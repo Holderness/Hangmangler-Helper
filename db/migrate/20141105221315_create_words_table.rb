@@ -1,6 +1,6 @@
 class CreateWordsTable < ActiveRecord::Migration
   def change
-  	create_table :word_banks do |t|
+  	create_table :words do |t|
   		t.string :word
 
   		t.timestamps

@@ -3,9 +3,10 @@ Bundler.require
 
 require './models/user'
 require './models/hangman'
-require './models/wordbank'
+require './models/word'
 
 require './helpers/authentication_helper'
+require './helpers/hangmangler_helper'
 
 
 require './controllers/application_controller'

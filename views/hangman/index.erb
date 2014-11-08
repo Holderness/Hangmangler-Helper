@@ -1,5 +1,37 @@
-<h1>Hangman</h1>
+<h1 id="moo">Hangman
+	<% if @current_game.nil? %>
+	<input action="/hangman/game" id="new-game" method="post" type="submit" value="New Game ?">
+	<% end %>
+</h1>
 
 
-<div class="hangman"></div>
-<div class="cows"></div>
+
+<!-- needs an if statement to disappear when game is played -->
+<!-- also needs a 'play again' input -->
+
+<div id="guess-display">
+
+		<form id="guess-box" action="/hangman/game" method="post">
+		  <input type="hidden" name="_method" value="patch">
+		  <input class="text-box" type="text" name="guess">
+		  <input id="guess-button" type="submit" value="Guess">
+	  </form>
+
+	<% if @incorrect_guesses != nil && @incorrect_guesses.length >= 6 %>
+		<div id="game-over"><strong>Game Over!</strong> Press <strong>Enter</strong> to Continue</div>
+		<div id="incorrect-guesses" guess-no="<%= @incorrect_guesses.length %>"></div>
+	<% elsif @game_state != nil && @incorrect_guesses != nil && @incorrect_guesses.length < 7 %>
+	  <div class="game-state"><%= @game_state.split("").join(" ") %></div>
+	  <div id="incorrect-guesses" guess-no="<%= @incorrect_guesses.length %>"><%= @incorrect_guesses.split("").join(" ") %></div>
+	<% elsif @game_state != nil %>
+	  <div class="game-state"><%= @game_state.split("").join(" ") %></div>
+	<% else %>
+	<% end %>
+</div>
+
+
+
+<div id="scene">
+  <div class="hangman"></div>
+  <div class="cows"></div>
+</div>
