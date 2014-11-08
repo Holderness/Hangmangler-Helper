@@ -55,21 +55,6 @@ function createsCowDisplay(){
 
 
 
-// function blark(){
-// 	$('.cows div:nth-child(1)').append("   _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _                            ".replace(/ /g, '&nbsp;&nbsp;'));
-//   $('.cows div:nth-child(2)').append("  |                                   |                           ".replace(/ /g, '&nbsp;&nbsp;'));
-//   $('.cows div:nth-child(3)').append("  |                                   |                           ".replace(/ /g, '&nbsp;&nbsp;'));
-//   $('.cows div:nth-child(4)').append("  | I am a talking cow. ha ha ha      |                           ".replace(/ /g, '&nbsp;&nbsp;'));
-//   $('.cows div:nth-child(5)').append("  |                                   |                           ".replace(/ /g, '&nbsp;&nbsp;'));
-// 	$('.cows div:nth-child(6)').append("  |                                   |                           ".replace(/ /g, '&nbsp;&nbsp;'));
-//   $('.cows div:nth-child(7)').append("  |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|                           ".replace(/ /g, '&nbsp;&nbsp;'));
-//   $('.cows div:nth-child(8)').append("                     \\                                           ".replace(/ /g, '&nbsp;&nbsp;'));
-// 	$('.cows div:nth-child(9)').append("                      \\                                          ".replace(/ /g, '&nbsp;&nbsp;')); 
-//   $('.cows div:nth-child(10)').append("                       \\                                         ".replace(/ /g, '&nbsp;&nbsp;')); 
-// }
-pinata = "choo choo motherfucker"
-gerbil = "I wish I had hands to touch you with"
-
 function leftCowDialogue(pinata){
 	$('.cows div:nth-child(5)').append("<span> "+pinata+" </span>".replace(/ /g, '&nbsp;&nbsp;'));
 	$('.cows div:nth-child(7)').append("                 o                                          ".replace(/ /g, '&nbsp;&nbsp;'));
@@ -81,7 +66,7 @@ function leftCowDialogue(pinata){
 		$('.cows div:nth-child(7)')[0].innerHTML = '&nbsp;&nbsp;'
 		$('.cows div:nth-child(8)')[0].innerHTML = '&nbsp;&nbsp;'
 		$('.cows div:nth-child(9)')[0].innerHTML = '&nbsp;&nbsp;'
-	}, 4000);
+	}, 3000);
 }
 
 function rightCowDialogue(gerbil){
@@ -95,42 +80,92 @@ function rightCowDialogue(gerbil){
 		$('.cows div:nth-child(7)')[0].innerHTML = '&nbsp;&nbsp;'
 		$('.cows div:nth-child(8)')[0].innerHTML = '&nbsp;&nbsp;'
 		$('.cows div:nth-child(9)')[0].innerHTML = '&nbsp;&nbsp;'
-	}, 4000);
+	}, 3000);
 }
 
-// function createsRightCowDialogue(){
-// 	$('.cows div:nth-child(0)').text("                           _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    ");
-//   $('.cows div:nth-child(1)').text("                          |                                   |   ");
-//   $('.cows div:nth-child(2)').text("                          |                                   |   ");
-//   $('.cows div:nth-child(3)').text("                          | yo quiero burritos                |   ");
-//   $('.cows div:nth-child(4)').text("                          |        y Jane Austen              |   ");
-// 	$('.cows div:nth-child(5)').text("                          |                                   |   ");
-//   $('.cows div:nth-child(6)').text("                          |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|   ");
-//   $('.cows div:nth-child(7)').text("                                            /                     ");
-// 	$('.cows div:nth-child(8)').text("                                           /                      ");
-//   $('.cows div:nth-child(9)').text("                                          /                       ");
+
+function script(){
+	script = [
+		"I am a talking cow. ha ha ha.",
+		"Your mom is. ha ha ha.",
+		"Your Mom likes duck sauce. ha ha ha.",
+		"Yes. That is true.",
+		"That bus ride, am I right?",
+		"It's not so bad. Everyone likes to shit on the bus.",
+		"And pee everywhere too.",
+		"I think this should be worth it though.",
+		"Yeah, I never miss a good hanging.",
+		"Should be pretty good.",
+		"I dunno, no one else is here yet.",
+		"Yeah, it's weird right?",
+		"People are getting hung left and right and no one's here.",
+		"It IS weird.",
+		"Maybe it's not weird.",
+		"No. It's weird.",
+		"What did the cow say to the pediatrist?",
+		"What did that dirty cow say?",
+		"Betty doesn't love you any more. She loves me now.",
+		"What did the cow say to the taxi driver?",
+		"I dunno. What?",
+		"I need to go to 20th and 31st.",
+		"I like blueberries."
+	]
+
+
+
+	for (i = 0; i < (script.length); i++){
+		
+		if ( i % 2 === 0 ) {
+				(function(i) {
+					setTimeout(function(){
+						leftCowDialogue(script[i]);
+					}, 4500 * i);
+				})(i);
+		} else {
+				(function(i) {
+					setTimeout(function(){
+						rightCowDialogue(script[i]);
+					}, 4500 * i);
+				})(i);
+		};
+	};
+}
+
+
+// Used this from stackoverflow, helped me understand how and why the timeout works above...
+
+// setTimeout(function(){
+// }, 5000);
+
+// for(var i=0; i < aList.length; i++) {
+//     (function(i) {
+//         setTimeout(function() {
+//             aList[i].doSomething();
+//         }, 500 * i); // <-- You need to multiply by i here.
+//     })(i);
 // }
 
 
 
-function script(){
-	var burritos = "  | I am a talking cow. ha ha ha         |                           ".replace(/ /g, '&nbsp;&nbsp;');
-	var tacosaco = "                          |                                   |      ".replace(/ /g, '&nbsp;&nbsp;');
-	var burritos = "  | Yo quiero burritos                   |                           ".replace(/ /g, '&nbsp;&nbsp;');
-	var burritos = "  | Yo quiero burritos                   |                           ".replace(/ /g, '&nbsp;&nbsp;');
-	var burritos = "  | Yo quiero burritos                   |                           ".replace(/ /g, '&nbsp;&nbsp;');
-	var burritos = "  | Yo quiero burritos                   |                           ".replace(/ /g, '&nbsp;&nbsp;');
-	var burritos = "  | Yo quiero burritos                   |                           ".replace(/ /g, '&nbsp;&nbsp;');
-	var burritos = "  | Yo quiero burritos                   |                           ".replace(/ /g, '&nbsp;&nbsp;');
-  $('.cows')[5].innerHTML = burritos
-}
+
+// 	leftCowDialogue(variable)
+// 	var burritos = "  | I am a talking cow. ha ha ha         |                           ".replace(/ /g, '&nbsp;&nbsp;');
+// 	var tacosaco = "                          |                                   |      ".replace(/ /g, '&nbsp;&nbsp;');
+// 	var burritos = "  | Yo quiero burritos                   |                           ".replace(/ /g, '&nbsp;&nbsp;');
+// 	var burritos = "  | Yo quiero burritos                   |                           ".replace(/ /g, '&nbsp;&nbsp;');
+// 	var burritos = "  | Yo quiero burritos                   |                           ".replace(/ /g, '&nbsp;&nbsp;');
+// 	var burritos = "  | Yo quiero burritos                   |                           ".replace(/ /g, '&nbsp;&nbsp;');
+// 	var burritos = "  | Yo quiero burritos                   |                           ".replace(/ /g, '&nbsp;&nbsp;');
+// 	var burritos = "  | Yo quiero burritos                   |                           ".replace(/ /g, '&nbsp;&nbsp;');
+//   $('.cows')[5].innerHTML = burritos
+// }
 
 
-function createsDialogue(dialogue){
+// function createsDialogue(dialogue){
 
 
 
-}
+// }
 
 
 
@@ -316,6 +351,7 @@ $(function(){
   interpretGuess();
   incorrectGuesses();
   moo();
+  script();
   // checkForNewGames();
 
 
