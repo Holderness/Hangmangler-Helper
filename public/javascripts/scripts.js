@@ -1,5 +1,15 @@
 console.log('ಠ__ಠ')
 
+
+
+
+
+
+///////////////////////////////////////HANG MANG////////////////////////////////////////////////////
+
+
+
+
 // getting endagered species from https://www.worldwildlife.org/species/directory?direction=desc&sort=extinction_status
 animals = []
 $('.keep').each(function(i, e){
@@ -85,6 +95,9 @@ function rightCowDialogue(gerbil){
 
 
 function script(){
+
+// break up into scripts, have an array within arrays, choose from a random script each time
+
 	script = [
 		"I am a talking cow. ha ha ha.",
 		"Your mom is. ha ha ha.",
@@ -119,57 +132,17 @@ function script(){
 				(function(i) {
 					setTimeout(function(){
 						leftCowDialogue(script[i]);
-					}, 4500 * i);
+					}, 4200 * i);
 				})(i);
 		} else {
 				(function(i) {
 					setTimeout(function(){
 						rightCowDialogue(script[i]);
-					}, 4500 * i);
+					}, 4200 * i);
 				})(i);
 		};
 	};
 }
-
-
-// Used this from stackoverflow, helped me understand how and why the timeout works above...
-
-// setTimeout(function(){
-// }, 5000);
-
-// for(var i=0; i < aList.length; i++) {
-//     (function(i) {
-//         setTimeout(function() {
-//             aList[i].doSomething();
-//         }, 500 * i); // <-- You need to multiply by i here.
-//     })(i);
-// }
-
-
-
-
-// 	leftCowDialogue(variable)
-// 	var burritos = "  | I am a talking cow. ha ha ha         |                           ".replace(/ /g, '&nbsp;&nbsp;');
-// 	var tacosaco = "                          |                                   |      ".replace(/ /g, '&nbsp;&nbsp;');
-// 	var burritos = "  | Yo quiero burritos                   |                           ".replace(/ /g, '&nbsp;&nbsp;');
-// 	var burritos = "  | Yo quiero burritos                   |                           ".replace(/ /g, '&nbsp;&nbsp;');
-// 	var burritos = "  | Yo quiero burritos                   |                           ".replace(/ /g, '&nbsp;&nbsp;');
-// 	var burritos = "  | Yo quiero burritos                   |                           ".replace(/ /g, '&nbsp;&nbsp;');
-// 	var burritos = "  | Yo quiero burritos                   |                           ".replace(/ /g, '&nbsp;&nbsp;');
-// 	var burritos = "  | Yo quiero burritos                   |                           ".replace(/ /g, '&nbsp;&nbsp;');
-//   $('.cows')[5].innerHTML = burritos
-// }
-
-
-// function createsDialogue(dialogue){
-
-
-
-// }
-
-
-
-
 
 
  //          (__)             (__)   
@@ -191,6 +164,8 @@ function script(){
 /// add creaking sounds as the gallows gets bent around by the code
 
 /////////////////////////////////////////////////////////////////////////
+
+
 
 
 // adds hangman gameplay
@@ -253,8 +228,9 @@ function createHangmanGame(){
   });
 }
 
+// new game mooo
 function moo(){
-	var hangmans = ["Hangmoo", "Hangan", "Hangmañ", "Hõngmõn", "Hangmrn"]
+	var hangmans = ["Hangmoo", "Hangan", "Hangmañ", "Hõngmõn", "Hangmrn", "Hangmanos", "Hangmanan", "Hangmank", "Manghan", "Herrgggmerrr"]
 	var hangman = hangmans[Math.floor(Math.random()*hangmans.length)]
   $('#new-game').click(function(e){
   	$('#moo').text(hangman)
@@ -277,8 +253,6 @@ function moo(){
 //     });
 // 	};
 
-
-
 function interpretGuess(){
 
   $('form#guess-box').on('submit', function(e){
@@ -300,12 +274,7 @@ function interpretGuess(){
 }
 
 
-
-
-
-
-
-
+// adds hanging man
 
 function incorrectGuesses(){
 	var guessNo = $('#incorrect-guesses').attr("guess-no") 
@@ -341,42 +310,50 @@ function incorrectGuesses(){
 }
 
 
+///////////////////////////////////////HANG MANG////////////////////////////////////////////////////
 
 
-// to document
-$(function(){
-  createsDisplay();
-  createsCowDisplay();
-  createHangmanGame();
-  interpretGuess();
-  incorrectGuesses();
-  moo();
-  script();
-  // checkForNewGames();
 
 
-  $(document).on('keyup', function(e){
-  	if (e.which === 13) {
-  		$('form#guess-box').submit();
-  		return false
-  	} else {
-      $("input[name='guess']").val(String.fromCharCode(e.keyCode))
-  	}
-  });
-
-  // $('#guess-botton').on('keyup', function(e){
-  //   if (e.which === 13) {
-  //     $('form#guess-box').submit();
-  //     return false;
-  //   }
-  // });
-
-  // setInterval(function(){
-  //   $.ajax({ url: "server", success: function(data){
-  //       //Update your dashboard gauge
-  //       salesGauge.setValue(data.value);
-  //   }, dataType: "json"});
-  // }, 30000);
 
 
-})
+
+
+
+
+
+//////////////////////////////////////TIC TAC DOH////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////TIC TAC DOH////////////////////////////////////////////////////
+

@@ -35,3 +35,28 @@
   <div class="hangman"></div>
   <div class="cows"></div>
 </div>
+
+
+
+<script>
+	$(function(){
+  createsDisplay();
+  createsCowDisplay();
+  createHangmanGame();
+  interpretGuess();
+  incorrectGuesses();
+  moo();
+  script();
+
+
+  $(document).on('keyup', function(e){
+  	if (e.which === 13) {
+  		$('form#guess-box').submit();
+  		return false
+  	} else {
+      $("input[name='guess']").val(String.fromCharCode(e.keyCode))
+  	}
+  });
+})
+</script>
+
