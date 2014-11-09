@@ -16,8 +16,33 @@ span {
 	padding: 1em;
 }
 
+td span {
+	display: block;
+  border: none;
+	padding: 0;
+}
+
+td div {
+	border: 1.8px dashed;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
 span #right-cow {
 	padding-left: 3em;
+}
+
+
+table, th, tr  {
+  border: 1px dashed;
+  padding: 10px;
+  border-collapse: separate; 
+  border-spacing: 10px;
+}
+
+td {
+	margin: 10px;
+	border: 1.8px dashed;
 }
 
 #scene {
