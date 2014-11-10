@@ -1,2 +1,25 @@
 <h1>Welcome</h1>
 
+
+
+<div class="clouds"></div>
+<div class="cows"></div>
+	<div class="cows"></div>
+
+
+<script>
+	$(function(){
+		createsCowDisplay();
+	  createsCloudDisplay();
+  $(document).ready(function(){
+    for (i = 0; i < 20; i++) {
+      $(".clouds").animate({ 
+        left: "+=700px",
+      }, 50000 );
+      $(".clouds").animate({ 
+        left: "-=700px",
+      }, 50000 );
+    }
+  })
+})
+</script>

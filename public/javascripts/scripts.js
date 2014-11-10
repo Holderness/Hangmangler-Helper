@@ -66,19 +66,14 @@ function createsCowDisplay(){
 
 function createsCloudDisplay(){
 
-	$('.clouds').append("<div>        ( )       ( )             ( )                 </div>".replace(/ /g, '&nbsp;&nbsp;'));
-	$('.clouds').append("<div>      (     ( ) (      )       ( )    ( )    ( )        </div>".replace(/ /g, '&nbsp;&nbsp;'));
-	$('.clouds').append("<div>    (                    )   ( )         ( )    ( )     </div>".replace(/ /g, '&nbsp;&nbsp;'));
+	$('.clouds').append("<div>        ( )       ( )             (  )                </div>".replace(/ /g, '&nbsp;&nbsp;'));
+	$('.clouds').append("<div>      (     ( ) (      )      (  )    (  )   (  )       </div>".replace(/ /g, '&nbsp;&nbsp;'));
+	$('.clouds').append("<div>    (                    )   (  )        (  )    (  )     </div>".replace(/ /g, '&nbsp;&nbsp;'));
 	$('.clouds').append("<div>   (                      )   ( )                 ( )  </div>".replace(/ /g, '&nbsp;&nbsp;'));
-	$('.clouds').append("<div>    (_ - _ - _ - _ - _ - _)    ( _ - _ _ _ _ _ - _ ( )</div>".replace(/ /g, '&nbsp;&nbsp;'));
+	$('.clouds').append("<div>    (_ - _ - _ - _ - _ - _)    ( _ - _ - _ - _ - _ ( )</div>".replace(/ /g, '&nbsp;&nbsp;'));
 
 }
 
-$(document).ready(function() {
-    $(".clouds").animate({ 
-        marginright: "+=10px",
-    }, 1000 );
-});
 
 
 
@@ -148,7 +143,7 @@ function playScript(){
 		],
 		[
 		"What did the cow say to the pediatrist?",
-		"What did that dirty cow say?",
+		"Iuhono",
 		"Betty doesn't love you any more. She loves me now."
 		],
 		[
@@ -164,7 +159,7 @@ function playScript(){
 		[
 		"'And when you gaze long into the abyss,'",
 		"'the abyss gazes also into you.'",
-		"Fredrich Nietzsche.",
+		"That's Nietzsche, right?",
 		"*squeeky fart*"
 		],
 		[
@@ -264,8 +259,8 @@ function playScript(){
 		[
     "If I had each leg on a tortoise . . .",
     "Yeah? And?",
-    "Do you, do you think I could guide them?",
-    "Yeah, sure. Knock yourself out."
+    "Do you.. do you think I could guide them?",
+    "Knock yourself out."
 		],
 		[
 		"Have you ever put a tortoise in your mouth?",
@@ -277,8 +272,29 @@ function playScript(){
     "Udders. Udders.",
     "UDDERS?",
     "UDDERS UDDERS UDDERS UDDERS."
-		]
-
+		],
+		[
+		"Remember when Henrietta got her head stuck in a barrel?",
+		"And she stumbled around, bumping into everything?",
+		"She had that thing on for weeks.",
+		"Rest in Peace, Henrietta."
+		],
+    [
+    "Do ever wanna just climb on a tractor and sing?",
+    "No."
+    ],
+    [
+    "The beauty of music is in the rests.",
+    "No, idiot, the music's in the music.",
+    "Silence is the best music.",
+    "I can't tell if you're being passive aggressive."
+    ],
+    [
+    "Being telepathic is the best.",
+    "Yeah, I hear you.",
+    "It's a brilliant day out isn't it?",
+    "Yes, quinoa is a complete protein."
+    ]
 	]
 
 
@@ -473,6 +489,8 @@ function incorrectGuesses(){
 }
 
 
+
+
 ///////////////////////////////////////HANG MANG////////////////////////////////////////////////////
 
 
@@ -520,3 +538,12 @@ function incorrectGuesses(){
 
 //////////////////////////////////////TIC TAC DOH////////////////////////////////////////////////////
 
+
+
+
+
+//////Profile
+
+var rotation = function(){
+
+}

@@ -1,7 +1,7 @@
 <h1 id="moo">Hangman
-	<% if @current_game.nil? %>
-	<input action="/hangman/game" id="new-game" method="post" type="submit" value="New Game ?">
-	<% end %>
+    <% if @current_game.nil? %>
+     <input action="/hangman/game" id="new-game" method="post" type="submit" value="New Game ?">
+    <% end %>
 </h1>
 
 
@@ -17,17 +17,24 @@
 		  <input id="guess-button" type="submit" value="Guess">
 	  </form>
 
+<!--   <div class='incorrect-guesses'></div> -->
+
 	<% if @incorrect_guesses != nil && @incorrect_guesses.length >= 6 %>
 		<div id="game-over"><strong>Game Over!</strong> Press <strong>Enter</strong> to Continue</div>
+    <div id="word"><strong><%= @current_game.word.word %></strong></div>
 		<div id="incorrect-guesses" guess-no="<%= @incorrect_guesses.length %>"></div>
 	<% elsif @game_state != nil && @incorrect_guesses != nil && @incorrect_guesses.length < 7 %>
-	  <div class="game-state"><%= @game_state.split("").join(" ") %></div>
-	  <div id="incorrect-guesses" guess-no="<%= @incorrect_guesses.length %>"><%= @incorrect_guesses.split("").join(" ") %></div>
-	<% elsif @game_state != nil %>
-	  <div class="game-state"><%= @game_state.split("").join(" ") %></div>
+	  <div class="game-state"><%= @readable_game_state %></div>
+	  <div id="incorrect-guesses" guess-no="<%= @incorrect_guesses.length %>"><%= @incorrect_guesses.chars.join("&nbsp;&nbsp;") %></div>
+	<% elsif @game_state != nil %> <!-- don't think this is doing anything -->
+	  <div class="game-state"><%= @readable_game_state %></div>
 	<% else %>
 	<% end %>
+
+
 </div>
+
+
 
 
 
@@ -40,7 +47,7 @@
 
 
 <script>
-	$(function(){
+$(function(){
   createsDisplay();
   createsCowDisplay();
   createsCloudDisplay();
@@ -52,17 +59,26 @@
 
 
   $(document).on('keyup', function(e){
-  	if (e.which === 13) {
-  		$('form#guess-box').submit();
-  		return false
-  	} else {
-      $("input[name='guess']").val(String.fromCharCode(e.keyCode))
-  	}
+   if (e.which === 13) {
+     $('form#guess-box').submit();
+     return false
+   } else {
+     $("input[name='guess']").val(String.fromCharCode(e.keyCode))
+   }
   });
 
-  $(".clouds").animate({ 
-        left: "+=1200px",
-    }, 100000 );
+
+  $(document).ready(function(){
+    for (i = 0; i < 20; i++) {
+      $(".clouds").animate({ 
+        left: "+=700px",
+      }, 80000 );
+      $(".clouds").animate({ 
+        left: "-=700px",
+      }, 80000 );
+    }
+  })
+
 })
 </script>
 

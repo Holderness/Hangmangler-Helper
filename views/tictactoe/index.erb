@@ -10,15 +10,14 @@
 
 
 </style>
-
+    <img id="announcer-cow-cow" src="http://i.imgur.com/frJFbyz.png?1">
+    <div id="message">LEt's PlAy a GamE</div>
 
 
 
   <div>
-  	<img class="cow-cow" src="http://i.imgur.com/frJFbyz.png?1">
-  	<a href="javascript:tictactoe();">Start Over</a>
-  	<div id="message">LEt's PlAy a GamE</div>
-  	<table id="table" width="520" height="520">
+  	<a href="javascript:tictactoe();"><button id="clear-board">Clear Board</button></a>
+  	<table width="520" height="520">
   		<tr>
   			<td id="s1" class="square" onclick="nextMove(this);"></td>
   			<td id="s2" class="square" onclick="nextMove(this);"></td>		
@@ -82,16 +81,16 @@
   function switchTurn() {
   	 if (checkForWinner(document.turn)) {
   	 	  if (document.turn === "X") {
-  	 	    setMessage("Congratulations Hangman, You win!");
+  	 	    setMessage("Hangman, You win!");
   	 	  } else {
-  	 	  	setMessage("Congratulations Cow, You win!");
+  	 	  	setMessage("Cow, You win!");
   	 	  }
   	 } else if (document.turn === "X") {
      	document.turn = "O";
-     	setMessage("It's Cow's turn!")
+     	setMessage("Cow's turn!")
      } else {
      	document.turn = "X";
-     	setMessage("It's Hangman's turn!")
+     	setMessage("Hangman's turn!")
      }
   }
 
@@ -128,6 +127,17 @@
    }
 
 
+
+// When you click on a square, it should call a function.
+// That function should send an AJAX call to the server with the playerID and
+// the move that the user chose.
+// the callback needs to acknowledge this and switch the board to "waiting for my turn" state
+
+function notMyTurnAnymore(data) {
+  // disable clicks
+  // send AJAX call checking if it's my turn (and if so, what's the new move on the board?)
+  // the callback from the AJAX request should also handle reactivating clicks and stuff
+}
 
 </script>
 

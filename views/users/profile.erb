@@ -2,3 +2,47 @@
 
 
 <h3>You've won <%= current_user.hangmen_won_id %> hangman games!</h3>
+
+<img style="position: absolute" class='cow-cow' src='http://i.imgur.com/frJFbyz.png?1'>
+
+<script>
+
+
+$(function() {
+	var $cow = $('.cow-cow');
+    
+    
+
+
+	$(document).ready(function(){
+		for (i = 0; i < 20; i++) {
+			$(".cow-cow").animate({ 
+				left: "+=1500px",
+			}, 8000 );
+			$(".cow-cow").animate({ 
+				left: "-=1500px",
+			}, 8000 );
+			$(".cow-cow").animate({ 
+				left: "+=1600px",
+			}, 8000 );
+			$(".cow-cow").animate({ 
+				left: "-=1500px",
+			}, 8000 );
+		}
+  })
+
+  rotate(0)
+
+
+
+	function rotate(deg) {
+		$cow.css({ WebkitTransform: 'rotate(' + deg + 'deg)'});
+		setTimeout(function() { 
+			rotate(++deg); 
+		}, 5);
+  }
+});
+
+
+
+</script>

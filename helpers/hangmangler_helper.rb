@@ -34,5 +34,16 @@ module Sinatra
 			game_state.join()
 		end
 
+		def space_out_chars(game_state)
+			readable_game_state = game_state.chars.map do |char|
+				if char == " "
+					"<br>"
+				else
+					char
+				end
+			end
+			readable_game_state.join(" ")
+		end
+
 	end
 end

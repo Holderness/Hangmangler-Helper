@@ -3,12 +3,16 @@ body {
 	font-family: Garamond;
 }
 
+nav {
+	text-align: center;
+}
+
 nav * {
 	display: inline-block;
 }
 
-table {
-	border: 1.8px dashed;
+h1 {
+	text-align: center;
 }
 
 span {
@@ -38,7 +42,16 @@ table, th, tr  {
   padding: 10px;
   border-collapse: separate; 
   border-spacing: 10px;
+  position: relative;
+/*  margin: 0 auto;*/
 }
+
+td {
+	margin: 10px;
+	border: 1.8px dashed;
+	font-size: 0;
+}
+
 
 .clouds {
 	margin: 0;
@@ -47,14 +60,27 @@ table, th, tr  {
 }
 
 .cloud {
-
 }
 
-td {
-	margin: 10px;
-	border: 1.8px dashed;
-	font-size: 0;
+#signup {
+	text-align: center;
 }
+
+#login {
+	text-align: center;
+}
+
+#message {
+	font-size: 1.5em;
+  float: left;
+  padding-left: 1em;
+  width: 15em;
+}
+
+#announcer-cow-cow {
+	float: left;
+}
+
 
 #scene {
 	float: left;
@@ -64,6 +90,34 @@ td {
 .hangman {
 	float: right;
 	margin-top: 7em;
+}
+
+#cow-cow {
+	float: right;
+}
+
+.button {
+	-webkit-appearance: none;
+	background-color: cornsilk;
+	border: 1.8px dashed;
+	font-size: 16px;
+	font-family: Garamond;
+	float: right;
+	margin-right: 1.2em;
+	width: 80px;
+	height: 35px;
+}
+
+#clear-board {
+  -webkit-appearance: none;
+	background-color: cornsilk;
+	border: 1.8px dashed;
+	font-size: 20px;
+	font-family: Garamond;
+	float: right;
+	margin-right: 8em;
+	width: 100px;
+	height: 50px;
 }
 
 #new-game {
@@ -83,6 +137,11 @@ td {
 	padding-top: 1em;
 }
 
+#word {
+	padding-top: 30px;
+	font-size: 40px;
+}
+
 .cows {
 	margin-top: 10em;
 	float: left;
@@ -99,9 +158,11 @@ td {
 .game-state {
   padding-top: 3em;
   padding-bottom: 3em;
+  font-size: 1.5em;
 }
 
 #incorrect-guesses {
+	font-size: 1.5em;
 }
 
 #guess-button {
