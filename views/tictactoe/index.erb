@@ -1,49 +1,154 @@
 <h1>TicTacToe</h1>
 
 
+<style>
+	.square {
+		width: 146px;
+		height: 146px;
+		text-align: center;
+	}
+
+
+</style>
+
+
+
+
+  <div>
+  	<img class="cow-cow" src="http://i.imgur.com/frJFbyz.png?1">
+  	<a href="javascript:tictactoe();">Start Over</a>
+  	<div id="message">LEt's PlAy a GamE</div>
+  	<table id="table" width="520" height="520">
+  		<tr>
+  			<td id="s1" class="square" onclick="nextMove(this);"></td>
+  			<td id="s2" class="square" onclick="nextMove(this);"></td>		
+  			<td id="s3" class="square" onclick="nextMove(this);"></td>
+  		</tr>
+  		<tr>
+  			<td id="s4" class="square" onclick="nextMove(this);"></td>
+  			<td id="s5" class="square" onclick="nextMove(this);"></td>		
+  			<td id="s6" class="square" onclick="nextMove(this);"></td>
+  		</tr>
+  		<tr>
+  			<td id="s7" class="square" onclick="nextMove(this);"></td>
+  			<td id="s8" class="square" onclick="nextMove(this);"></td>		
+  			<td id="s9" class="square" onclick="nextMove(this);"></td>
+  		</tr>
+  	</table>
+  </div>
+
+
+<script>
+
+  $(function(){
+    tictactoe();
+  });
+
+
+  function tictactoe(){
+
+  	for (var i = 1; i <= 9; i++){
+  	  clearSquare(i);
+    }
+    document.turn = "X";
+  }
+
+  function nextMove(square) {
+  	if (square.innerText === "" && document.turn === "O") {
+  		square.innerText = document.turn;
+  		appendCow(square)
+  	  switchTurn();
+    } else if (square.innerText === "") {
+    	square.innerText = document.turn;
+    	appendHuman(square)
+  	  switchTurn();
+    } else {
+    	setMessage("That square is already used");
+    }
+  }
+
+  function appendCow(square){
+  	$(square).append($("<img class='cow-cow' src='http://i.imgur.com/frJFbyz.png?1'>"))
+  }
+
+  function appendHuman(square){
+  	$(square).append($("<img class='hugh-hugh' src='http://i.imgur.com/nGtMGfa.png?3'>"))
+  }
+
+  function setMessage(msg) {
+  	$("#message").text(msg)
+  }
+
+  function switchTurn() {
+  	 if (checkForWinner(document.turn)) {
+  	 	  if (document.turn === "X") {
+  	 	    setMessage("Congratulations Hangman, You win!");
+  	 	  } else {
+  	 	  	setMessage("Congratulations Cow, You win!");
+  	 	  }
+  	 } else if (document.turn === "X") {
+     	document.turn = "O";
+     	setMessage("It's Cow's turn!")
+     } else {
+     	document.turn = "X";
+     	setMessage("It's Hangman's turn!")
+     }
+  }
+
+
+  function checkForWinner(move) {
+  	var result = false;
+  	if (inspectRow(1,2,3, move) || 
+  		inspectRow(4,5,6, move) || 
+  		inspectRow(7,8,9, move) ||
+  		inspectRow(2,5,8, move) ||
+  		inspectRow(3,6,9, move) ||
+  		inspectRow(1,4,7, move) ||
+  		inspectRow(3,5,7, move) ||
+  		inspectRow(1,5,9, move)) {
+  			result = true;
+  		}
+  	return result;
+  }
+
+   function inspectRow(a, b, c, move) {
+   	 var result = false;
+   	 if (getSquare(a) === move && getSquare(b) === move && getSquare(c) === move) {
+   	 	result = true
+   	 }
+   	 return result;
+   }
+
+   function getSquare(number) {
+     return $("#s"+number).text();
+   }
+
+   function clearSquare(number) {
+   	$("#s"+number).text(" ")
+   }
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  tried to do a 3dish table. not worth it.
+
 <table id="table" width="450" height="450">
-	<tr>
-		<td>s</td>
-	  <td>a</td>
-	  <td>a</td>
-	</tr>
-	<tr>
-		<td>b</td>
-		<td>b</td>
-		<td>b</td>
-	</tr>
-	<tr>
-		<td>c</td>
-		<td>c</td>
-		<td>c</td>
-	</tr>
-
-
-
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--  tried to do a 3d table. not worth it.
-
-<table id="table" width="450" height="450">
   <tr>
   	<td><span>/</span><div>a</div><span>/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\</span><span>/\</span><span>/\</span></td>
 
@@ -60,11 +165,12 @@
   	<td><span>/</span><div>a</div><span>/\</span><span>/\</span><span>/\</span></td>
   	<td><span>/</span><div>a</div><span>/\</span><span>/\</span><span>/\</span></td>
   </tr>
+  </table>
  -->
 
 
 
-</table>
+
 
 <script>
 

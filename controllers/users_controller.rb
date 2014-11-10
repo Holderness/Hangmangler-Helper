@@ -16,6 +16,8 @@ class UsersController < ApplicationController
   end
 
   get '/profile' do
+    current_user.hangmen_won_id ||= 0
+
     erb :'users/profile'
   end
 

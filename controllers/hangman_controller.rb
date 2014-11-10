@@ -42,7 +42,16 @@ class HangmanController < ApplicationController
   	  params[:data][:complete] = true if @incorrect_guesses.length == 6
 
   	  updated_hangman = Hangman.update(@current_game.id, params[:data])
+
+  	  if @game_state == hangman_word
+  	  	current_user.hangmen_won_id ||= 0
+  	  	current_user.hangmen_won_id += 1
+  	  end
+  	  
     end
+
+
+
     erb :'hangman/index'
   end
 

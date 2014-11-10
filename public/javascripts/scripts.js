@@ -64,10 +64,27 @@ function createsCowDisplay(){
 }
 
 
+function createsCloudDisplay(){
+
+	$('.clouds').append("<div>        ( )       ( )             ( )                 </div>".replace(/ /g, '&nbsp;&nbsp;'));
+	$('.clouds').append("<div>      (     ( ) (      )       ( )    ( )    ( )        </div>".replace(/ /g, '&nbsp;&nbsp;'));
+	$('.clouds').append("<div>    (                    )   ( )         ( )    ( )     </div>".replace(/ /g, '&nbsp;&nbsp;'));
+	$('.clouds').append("<div>   (                      )   ( )                 ( )  </div>".replace(/ /g, '&nbsp;&nbsp;'));
+	$('.clouds').append("<div>    (_ - _ - _ - _ - _ - _)    ( _ - _ _ _ _ _ - _ ( )</div>".replace(/ /g, '&nbsp;&nbsp;'));
+
+}
+
+$(document).ready(function() {
+    $(".clouds").animate({ 
+        marginright: "+=10px",
+    }, 1000 );
+});
+
+
 
 function leftCowDialogue(pinata){
 	$('.cows div:nth-child(5)').append("<span> "+pinata+" </span>".replace(/ /g, '&nbsp;&nbsp;'));
-	$('.cows div:nth-child(7)').append("                 o                                          ".replace(/ /g, '&nbsp;&nbsp;'));
+	$('.cows div:nth-child(7)').append("                o                                           ".replace(/ /g, '&nbsp;&nbsp;'));
 	$('.cows div:nth-child(8)').append("                &nbsp;  o                                        ".replace(/ /g, '&nbsp;&nbsp;')); 
 	$('.cows div:nth-child(9)').append("                     o                                      ".replace(/ /g, '&nbsp;&nbsp;'));
 
@@ -94,55 +111,201 @@ function rightCowDialogue(gerbil){
 }
 
 
-function script(){
+
+
+
+function playScript(){
 
 // break up into scripts, have an array within arrays, choose from a random script each time
 
 	script = [
+	  [
 		"I am a talking cow. ha ha ha.",
 		"Your mom is. ha ha ha.",
 		"Your Mom likes duck sauce. ha ha ha.",
-		"Yes. That is true.",
+		"Yes. That is true. She does like duck sauce."
+		],
+		[
 		"That bus ride, am I right?",
 		"It's not so bad. Everyone likes to shit on the bus.",
 		"And pee everywhere too.",
-		"I think this should be worth it though.",
-		"Yeah, I never miss a good hanging.",
-		"Should be pretty good.",
+		"We need to install drains."
+		],
+		[
+		"I never miss a good hanging.",
 		"I dunno, no one else is here yet.",
-		"Yeah, it's weird right?",
+		"Hangings can still be good with no people u kno",
+		"This is exactly what u need to tell ur therapist"
+		],
+		[
+		"I thought you said they'd be serving bagels."
+		],
+		[
 		"People are getting hung left and right and no one's here.",
-		"It IS weird.",
+		"Is it weird?",
 		"Maybe it's not weird.",
-		"No. It's weird.",
+		"It IS weird."
+		],
+		[
 		"What did the cow say to the pediatrist?",
 		"What did that dirty cow say?",
-		"Betty doesn't love you any more. She loves me now.",
+		"Betty doesn't love you any more. She loves me now."
+		],
+		[
 		"What did the cow say to the taxi driver?",
 		"I dunno. What?",
-		"I need to go to 20th and 31st.",
-		"I like blueberries."
+		"I need to go to 20th and 31st."
+		],
+		[
+		"I like blueberries.",
+		" . . . . . . . . . . . ",
+		"I really like them."
+		],
+		[
+		"'And when you gaze long into the abyss,'",
+		"'the abyss gazes also into you.'",
+		"Fredrich Nietzsche.",
+		"*squeeky fart*"
+		],
+		[
+		"I wish I had hands to touch you with.",
+    " . . . . . . .",
+    "I wish all my feet were hands",
+		],
+		[
+		"So are these guys farmers?",
+		"I'm not sure.",
+		"Why are they being hanged?",
+		"Why do you always question these things?"
+		],
+		[
+		"Quick, what's your favorite type of bagel?",
+		"Onions. Definitely Onions.",
+		"Huh. Really?",
+		"What?"
+		],
+		[
+    "What scares you the most?",
+    "Chickens.",
+    "Shit. Really?",
+    "No. I'm just kidding. It's the slaughterhouse."
+		],
+		[
+		"Last night I dreamed I was a bagel.",
+		"Yeah?",
+		"A fat woman ate me and I digested in her stomach for weeks.",
+		"You've gotta stop licking the fence."
+		],
+		[
+    "I saw a frog on a rock the other day.",
+    "I love frogs.",
+    "I dropped some hay on it for it to eat.",
+    "Comere, lemme kiss those cow lips."
+		],
+		[
+    "Whenever I see bagels I'm like 'awwww yeahhh'",
+    "Do you? Do you really?",
+    "You're such an asshole sometimes.",
+    "Tell another story and I'll hang myself."
+		],
+		[
+		"What's that movie with the girl dancing in that mountain field?",
+		"The Sound of Music?",
+		"Yeah, sometimes I wish I could be that girl.",
+		"Me too."
+		],
+		[
+		"Wanna go swimming after this?",
+		"I didn't bring my bathing suit.",
+		"So what?",
+		"Ok. At the river though, the pond is gross."
+		],
+		[
+    "Why don't you like swimming in the pond?",
+    "People swim there and they make me nervous.",
+    "Why?",
+    "They just stare at you. Makes me uncomfortable."
+		],
+		[
+    "Jesus Christ, is there a goat on top of me?",
+    "No. Why?",
+    "Sometimes I feel like there's a goat standing on top of me.",
+    "My great uncle was a goat."
+		],
+		[
+    "Hey you, person typing.",
+    "Stop. You're embarassing me.",
+    "Keep up the good hanging.",
+    "Please, don't mind my friend."
+		],
+		[
+    "Mooooo.",
+    "Ha ha. You're such an idiot.",
+    "Mooooo.",
+    "Blink if you're having an aneurysm."
+		],
+		[
+    "Have you ever tried yoga?",
+    "No, I have a bad back.",
+    "That's exactly why you should do yoga.",
+    "I appreciate what you're doing, but stop."
+		],
+		[
+		"'If you leave me now,'",
+		"'you'll take away the biggest part of me.'",
+    "'Ooo woo woo baby please don't goooooo.'"
+		],
+		[
+    "Hey, how's your novel coming along?",
+    "I don't want to talk about it.",
+    "I think someone wants to talk about it!!",
+    "No, someone really doesn't."
+		],
+		[
+    "If I had each leg on a tortoise . . .",
+    "Yeah? And?",
+    "Do you, do you think I could guide them?",
+    "Yeah, sure. Knock yourself out."
+		],
+		[
+		"Have you ever put a tortoise in your mouth?",
+		"No. What?",
+		"They taste HORRIBLE."
+		],
+		[
+    "Udders.",
+    "Udders. Udders.",
+    "UDDERS?",
+    "UDDERS UDDERS UDDERS UDDERS."
+		]
+
 	]
 
 
+	for (i = 0; i < (1000); i++){
+		(function(i) {
+		 setTimeout(function(){
+		 	var randomarray = Math.floor(Math.random()*(script.length))
+		for (i = 0; i < (script[randomarray].length); i++){
+			if ( i % 2 === 0 ) {
+				(function(i) {
+					setTimeout(function(){
+						leftCowDialogue(script[randomarray][i]);
+					}, 4000 * i);
+				})(i);
+			} else {
+				(function(i) {
+					setTimeout(function(){
+						rightCowDialogue(script[randomarray][i]);
+					}, 4000 * i);
+				})(i); 
+			}; // else
+		}// for loop, inner
+	 }, 17000 * i); // timeout, outer
+	})(i); // timeout function, outer
+	}; //for loop, outer
+} //function
 
-	for (i = 0; i < (script.length); i++){
-		
-		if ( i % 2 === 0 ) {
-				(function(i) {
-					setTimeout(function(){
-						leftCowDialogue(script[i]);
-					}, 4200 * i);
-				})(i);
-		} else {
-				(function(i) {
-					setTimeout(function(){
-						rightCowDialogue(script[i]);
-					}, 4200 * i);
-				})(i);
-		};
-	};
-}
 
 
  //          (__)             (__)   
@@ -168,7 +331,7 @@ function script(){
 
 
 
-// adds hangman gameplay
+// hangman gameplay
 
 function insertFace(){
 	$('.hangman div')[4].innerHTML = "        (ಠ_ಠ)  &nbsp;    || ||".replace(/ /g, '&nbsp;&nbsp;');
