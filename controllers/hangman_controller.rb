@@ -3,6 +3,7 @@ class HangmanController < ApplicationController
 	helpers Sinatra::HangmanglerHelper
 
 	get '/game' do
+    authenticate!
 		@current_game = current_user.hangmen.where(complete: false).first
 		if @current_game != nil
 			hangman_word = @current_game.word.word
@@ -15,6 +16,7 @@ class HangmanController < ApplicationController
 
 
   post '/game' do
+    authenticate!
   	hangman_word = Word.limit(1).order("RANDOM()")[0] ## Doesn't work well with large data, ##refactor##
   	## better than Word.all.sample though.
   	@game_state = create_game_state(hangman_word.word)
@@ -25,7 +27,7 @@ class HangmanController < ApplicationController
   
 
   patch '/game' do
-
+    authenticate!
   	guess = params["guess"]
   	@current_game = current_user.hangmen.where(complete: false).first
     current_user.hangmen_won_id ||= 0
@@ -49,8 +51,6 @@ class HangmanController < ApplicationController
   	  end
   	  
     end
-
-
 
     erb :'hangman/index'
   end

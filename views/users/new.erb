@@ -1,5 +1,11 @@
 <h1>Sign Up</h1>
 
+<% if @error %>
+<div class="errors">
+<h1>Grumble! YOU HAVE AN ERROR. <%= @error %></h1>
+</div>
+<% end %>
+
 <form id="signup" action="/users" method="post">
   <input type="text" name="user[username]" placeholder=" ---< username >--- ">
   <input type="password" name="password" placeholder=' ---< password >--- '>

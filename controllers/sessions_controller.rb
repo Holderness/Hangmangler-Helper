@@ -6,11 +6,18 @@ class SessionsController < ApplicationController
 
   post '/' do
     user = User.find_by({username: params[:username]})
-    if user && user.password == params[:password]
+    if user == nil
+      @error = "Be sure to enter your correct username and password."
+      erb :'sessions/login'
+    elsif user.password == params[:password]
       session[:current_user] = user.id
       redirect '/users/profile'
+    elsif user.password != params[:password]
+      @error = "Incorrect password."
+      erb :'sessions/login'
     else
-      redirect '/sessions/login'
+      @error = "Be sure to enter your correct username and password."
+      erb :'sessions/login'
     end
   end
 
