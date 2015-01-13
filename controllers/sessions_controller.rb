@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   post '/' do
     user = User.find_by({username: params[:username]})
     if user == nil
-      @error = "Be sure to enter your correct username and password."
+      @error = "That user does not exist."
       erb :'sessions/login'
     elsif user.password == params[:password]
       session[:current_user] = user.id
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       @error = "Incorrect password."
       erb :'sessions/login'
     else
-      @error = "Be sure to enter your correct username and password."
+      @error = "Be sure to enter your correct username and password!"
       erb :'sessions/login'
     end
   end

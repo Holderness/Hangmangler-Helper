@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     elsif params['user']['username'] == nil || params['user']['username'].length < 4
       @error = "Username must be at least 5 characters."
       erb :"users/new"
-    elsif params['user']['password'] == nil || params['user']['password'].length < 4 
+    elsif params['password'] == nil || params['password'].length < 4 
       @error = "Password must be at least 5 characters."
       erb :"users/new"
     else
