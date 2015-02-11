@@ -33,18 +33,26 @@
 
   <% if @incorrect_guesses != nil && @incorrect_guesses.length >= 6 || !@gamestate.nil? %>
     <div id="game-over">
+      <div id="word"><strong><%= @current_game.word.word unless @current_game.nil? %></strong></div>
+      <br><br>
       <strong>Game Over!</strong> Press <strong>Enter</strong> to Continue
     </div>
   <% elsif !@current_game.nil? && @game_state == @current_game.word.word %>
     <div id="game-over">
-      <strong>Great Job! You saved a human! Kind of. </strong> Press <strong>Enter</strong> to Continue
+      <strong>Great Job! You saved a human! Kind of.</strong> 
+      <br><br>
+      Press <strong>Enter</strong> to Continue
     </div>
   <% elsif @current_game.nil? %>
-    <div id="game-over">Play again?<br><br>Click <strong>New  Game</strong> or press <strong>Spacebar</strong>.</div>
+    <div id="game-over">
+      Play again?
+      <br><br>
+      Click <strong>New  Game</strong> or press <strong>Spacebar</strong>.
+    </div>
   <% else %>
   <% end %>
 
-  <div id="word"><strong><%= @current_game.word.word unless @current_game.nil? %></strong></div>
+
 
 </div>
 
