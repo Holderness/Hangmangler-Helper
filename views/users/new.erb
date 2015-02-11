@@ -1,4 +1,4 @@
-<h1>Sign Up</h1>
+<h1 class="registration-title">Sign Up</h1>
 
 <% if @error %>
 <div class="errors">
@@ -6,7 +6,7 @@
 </div>
 <% end %>
 
-<form id="signup" action="/users" method="post">
+<form class="registration-form" action="/users" method="post">
   <input type="text" name="user[username]" placeholder=" ---< username >--- ">
   <input type="password" name="password" placeholder=' ---< password >--- '>
   <input type="submit">

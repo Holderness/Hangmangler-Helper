@@ -61,11 +61,18 @@ td {
 
 /* login */
 
-#signup {
+
+.registration-form{
+	margin-left: 352px;
 	text-align: center;
 }
 
-#login {
+.non-user-navigation {
+	margin-left: 510px;
+}
+
+.registration-title {
+	margin-left: 190px;
 	text-align: center;
 }
 
@@ -98,7 +105,7 @@ td {
 	margin-top: .7em;
 	width: 20em;
 	position: absolute;
-	left: 980px;
+	left: 1050px;
 }
 
 .game-state {
@@ -146,7 +153,7 @@ td {
 /* tic-tac-toe */
 
 #announcer-cow-cow {
-	margin: 65px 0 0 100px;
+	margin: 65px 0 0 260px;
 	float: left;
 }
 
@@ -172,13 +179,13 @@ td {
 .tic-tac-toe-board {
 	position: absolute;
 	margin-top: 50px;
-	margin-left: 300px;
+	margin-left: 460px;
 }
 
 .thought-bubbles ul {
 	list-style-type: none;
 	position: absolute;
-	margin: 50px 0 0 189px;
+	margin: 50px 0 0 350px;
 }
 
 .square {
@@ -199,7 +206,9 @@ td {
 
 /* home page */
 
-
+.welcome {
+	margin-left: 453px;
+}
 
 /* site-wide */
 
