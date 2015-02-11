@@ -48,6 +48,8 @@ class HangmanController < ApplicationController
 
   	  if @game_state == @hangman_word
         Hangman.update(@current_game.id, complete: true)
+        hangmen_won_update = @current_user.hangmen_won_id += 1
+        User.update(@current_user.id, hangmen_won_id: hangmen_won_update)
   	  end
  
     end
