@@ -6,7 +6,7 @@ class HangmanController < ApplicationController
     authenticate!
 		@current_game = current_user.hangmen.where(complete: false).first
 		if @current_game != nil
-			hangman_word = @current_game.word.word
+			@current_game.word.word
 			@game_state = @current_game.game_state
 			@incorrect_guesses = @current_game.incorrect_guesses
       @readable_game_state = space_out_chars(@game_state)
@@ -21,7 +21,7 @@ class HangmanController < ApplicationController
   	## better than Word.all.sample though.
   	@game_state = create_game_state(hangman_word.word)
   	if current_user.hangmen.where(complete: false).first.nil?
-  	  new_game = Hangman.create(word: hangman_word, user: current_user, game_state: @game_state, complete: false)
+  	  Hangman.create(word: hangman_word, user: current_user, game_state: @game_state, complete: false)
   	end
   end
   
@@ -32,7 +32,7 @@ class HangmanController < ApplicationController
   	@current_game = current_user.hangmen.where(complete: false).first
     current_user.hangmen_won_id ||= 0
 
-  	if @current_game != nil
+    if @current_game != nil 
   	  @hangman_word = @current_game.word.word
   	  @incorrect_guesses = update_incorrect_guesses(@current_game.incorrect_guesses, guess, @hangman_word)
   	  @game_state = update_game_state(params["guess"], @hangman_word, @current_game.game_state)
@@ -44,12 +44,12 @@ class HangmanController < ApplicationController
   	  params[:data][:incorrect_guesses] = @incorrect_guesses
   	  params[:data][:complete] = true if @incorrect_guesses.length >= 6
 
-  	  updated_hangman = Hangman.update(@current_game.id, params[:data])
+  	  Hangman.update(@current_game.id, params[:data])
 
   	  if @game_state == @hangman_word
-        @current_game = nil
+        Hangman.update(@current_game.id, complete: true)
   	  end
-  	  
+ 
     end
 
     erb :'hangman/index'

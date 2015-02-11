@@ -4,16 +4,24 @@ body {
 }
 
 nav {
-	text-align: center;
+  margin-left: 403px;
+  width: 560px;
+}
+nav ul {
+ list-style-type: none;
 }
 
-nav * {
+nav ul li {
 	display: inline-block;
 }
 
 h1 {
-	text-align: center;
+	margin-left: 75px;
+	width: 600px;
 }
+
+
+
 
 span {
 	border: 1.8px dashed;
@@ -151,8 +159,9 @@ td {
 
 #guess-display {
 	margin-top: .7em;
-	float: right;
 	width: 20em;
+	position: absolute;
+	left: 980px;
 }
 
 .game-state {

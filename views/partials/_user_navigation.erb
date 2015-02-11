@@ -1,19 +1,28 @@
 <nav>
 
-  <form action="/" method="get">
-    <input class="button" type="submit" value="Home">
-  </form>
-
-  <form action="/sessions" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input class="button" type="submit" value="Log-Out">
-  </form>
-
-  <form action="/users/profile" method="get">
-    <input class="button" type="submit" value="Profile">
-  </form>
-
-  <a href="/hangman/game"><button class="button">Hangman</button></a>
-  <a href="/tictactoe/game"><button class="button">TicTacToe</button></a>
+  <ul>
+    <li>
+      <form action="/" method="get">
+        <input class="button" type="submit" value="Home">
+      </form>
+    </li>
+    <li>
+      <form action="/sessions" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input class="button" type="submit" value="Log-Out">
+      </form>
+    </li>
+    <li>
+      <form action="/users/profile" method="get">
+        <input class="button" type="submit" value="Profile">
+      </form>
+    </li>
+    <li>
+      <a href="/hangman/game"><button class="button">Hangman</button></a>
+    </li>
+    <li>
+      <a href="/tictactoe/game"><button class="button">TicTacToe</button></a>
+    </li>
+  </ul>
 
 </nav>

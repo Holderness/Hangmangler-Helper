@@ -6,8 +6,8 @@ class ApplicationController < Sinatra::Base
   enable :method_override
 
   before do
-    @connection = ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/games_db')
-    # @connection = ActiveRecord::Base.establish_connection({adapter: 'postgresql',database: 'games_db'})
+    # @connection = ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/games_db')
+    @connection = ActiveRecord::Base.establish_connection({adapter: 'postgresql',database: 'games_db'})
   end
   after do
     @connection.disconnect!

@@ -1,7 +1,7 @@
 <h1 id="moo">Hangman
-    <% if @current_game.nil? %>
-     <input action="/hangman/game" id="new-game" method="post" type="submit" value="New Game ?">
-    <% end %>
+  <% if @current_game.nil? %>
+    <input action="/hangman/game" id="new-game" method="post" type="submit" value="New Game ?">
+  <% end %>
 </h1>
 
 
@@ -9,28 +9,42 @@
 <!-- needs an if statement to disappear when game is played -->
 <!-- also needs a 'play again' input -->
 
+<div>
+  
+  
+
 <div id="guess-display">
 
-		<form id="guess-box" action="/hangman/game" method="post">
-		  <input type="hidden" name="_method" value="patch">
-		  <input class="text-box" type="text" name="guess">
-		  <input id="guess-button" type="submit" value="Guess">
-	  </form>
+  <form id="guess-box" action="/hangman/game" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <input class="text-box" type="text" name="guess">
+    <input id="guess-button" type="submit" value="Guess">
+  </form>
 
 <!--   <div class='incorrect-guesses'></div> -->
 
-	<% if @incorrect_guesses != nil && @incorrect_guesses.length >= 6 %>
-		<div id="game-over"><strong>Game Over!</strong> Press <strong>Enter</strong> to Continue</div>
-    <div id="word"><strong><%= @current_game.word.word %></strong></div>
-		<div id="incorrect-guesses" guess-no="<%= @incorrect_guesses.length %>"></div>
-	<% elsif @game_state != nil && @incorrect_guesses != nil && @incorrect_guesses.length < 7 %>
-	  <div class="game-state"><%= @readable_game_state %></div>
-	  <div id="incorrect-guesses" guess-no="<%= @incorrect_guesses.length %>"><%= @incorrect_guesses.chars.join("&nbsp;&nbsp;") %></div>
-	<% elsif @game_state != nil %> <!-- don't think this is doing anything -->
-	  <div class="game-state"><%= @readable_game_state %></div>
-	<% else %>
-	<% end %>
+  <div class="game-state">
+    <%= @readable_game_state %>
+  </div>
 
+  <div id="incorrect-guesses" guess-no="<%= @incorrect_guesses.length unless @incorrect_guesses.nil? %>">
+    <%= @incorrect_guesses.chars.join("&nbsp;&nbsp;") unless @incorrect_guesses.nil?%>
+  </div>
+
+  <% if @incorrect_guesses != nil && @incorrect_guesses.length >= 6 || !@gamestate.nil? %>
+    <div id="game-over">
+      <strong>Game Over!</strong> Press <strong>Enter</strong> to Continue
+    </div>
+  <% elsif !@current_game.nil? && @game_state == @current_game.word.word %>
+    <div id="game-over">
+      <strong>Great Job! You saved a human! Kind of. </strong> Press <strong>Enter</strong> to Continue
+    </div>
+  <% elsif @current_game.nil? %>
+    <div id="game-over">Start a new Game!</div>
+  <% else %>
+  <% end %>
+
+  <div id="word"><strong><%= @current_game.word.word unless @current_game.nil? %></strong></div>
 
 </div>
 
@@ -43,7 +57,7 @@
   <div class="hangman"></div>
   <div class="cows"></div>
 </div>
-
+</div>
 
 
 <script>
