@@ -392,34 +392,33 @@ function insertBothLegs(){
 // initialize hangman game
 
 function createHangmanGame(){
-
-	$('#new-game').click(function(e){
+	$('#new-game').on('submit', function(e){
     var game_state = $(this).find("[data-name='<%= @game_state %>']").val();
-
     $.ajax({
-    method: 'POST',
-    url: '/hangman/game',
-    dataType: 'json',
-    success: function(data){
-      data; 
+      method: 'POST',
+      url: '/hangman/game',
+      dataType: 'json',
+      success: function(data){
+        data;
       } // success
     }); // $.ajax
   });
 }
 
+
 // new game mooo
 function moo(){
-	var hangmans = ["Hangmoo", "Hangan", "Hangmañ", "Hõngmõn", "Hangmrn", "Hangmanos", "Hangmanan", "Hangmank", "Manghan", "Herrgggmerrr"]
-	var hangman = hangmans[Math.floor(Math.random()*hangmans.length)]
+	var hangmans = ["Hangmoo", "Hangan", "Hangmañ", "Hõngmõn", "Hangmrn", "Hangmanos", "Hangmanan", "Hangmank", "Manghan", "Herrgggmerrr"];
+	var hangman = hangmans[Math.floor(Math.random()*hangmans.length)];
   $('#new-game').click(function(e){
-  	$('#moo').text(hangman)
-  	setTimeout(function(){
-  		$('#moo').text(hangman);
-  	}, 1000);
-  	setTimeout(function(){
-  		$('#moo').text(hangman)
-  	}, 1000);
-  })
+    $('#moo').text(hangman);
+    setTimeout(function(){
+      $('#moo').text(hangman);
+    }, 1000);
+    setTimeout(function(){
+      $('#moo').text(hangman);
+    }, 1000);
+  });
 }
 
 // function checkForNewGames(){
@@ -435,20 +434,20 @@ function moo(){
 function interpretGuess(){
 
   $('form#guess-box').on('submit', function(e){
-	  var guess = $(this).find("[name='guess']").val();
+    var guess = $(this).find("[name='guess']").val();
 
-	  $.ajax({
-    method: 'PATCH',
-    url: '/hangman/game',
-    dataType: 'json',
-    data: {guess: guess, _method: "patch", },
-    success: function(data){
-  	  e.preventDefault();
-  	  data.forEach(function(attr){
+    $.ajax({
+      method: 'PATCH',
+      url: '/hangman/game',
+      dataType: 'json',
+      data: {guess: guess, _method: "patch", },
+      success: function(data){
+        e.preventDefault();
+        data.forEach(function(attr){
           attr;
         });
-  	  } //success
-  	}); // ajax
+      } //success
+    }); // ajax
   }); //form function
 }
 

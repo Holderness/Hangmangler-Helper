@@ -11,7 +11,7 @@
 
 <div>
   
-  
+
 
 <div id="guess-display">
 
@@ -40,7 +40,7 @@
       <strong>Great Job! You saved a human! Kind of. </strong> Press <strong>Enter</strong> to Continue
     </div>
   <% elsif @current_game.nil? %>
-    <div id="game-over">Start a new Game!</div>
+    <div id="game-over">Play again?<br><br>Click <strong>New  Game</strong> or press <strong>Spacebar</strong>.</div>
   <% else %>
   <% end %>
 
@@ -75,11 +75,22 @@ $(function(){
   $(document).on('keyup', function(e){
    if (e.which === 13) {
      $('form#guess-box').submit();
-     return false
+     return false;
    } else {
      $("input[name='guess']").val(String.fromCharCode(e.keyCode))
    }
   });
+
+  $(document).on('keyup', function(e){
+    if (e.which === 32) {
+      $('#new-game').submit();
+      $('#new-game').remove();
+      $('#game-over').text('Make a Guess!')
+    return false;
+    };
+  });
+
+
 
 
   $(document).ready(function(){
