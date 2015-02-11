@@ -1,40 +1,40 @@
 <h1>TicTacToe</h1>
 
 
-<style>
-	.square {
-		width: 146px;
-		height: 146px;
-		text-align: center;
-	}
+<img id="announcer-cow-cow" src="http://i.imgur.com/frJFbyz.png?1">
+<div id="message">LEt's PlAy a GamE &nbsp;&nbsp;</div>
+<div class="thought-bubbles">
+  <ul>
+    <li>
+       &nbsp;&nbsp;&nbsp;&nbsp;o
+     </li>
+     <li>
+       o
+     </li>
+  </ul>
+</div>
 
 
-</style>
-    <img id="announcer-cow-cow" src="http://i.imgur.com/frJFbyz.png?1">
-    <div id="message">LEt's PlAy a GamE</div>
-
-
-
-  <div>
-  	<a href="javascript:tictactoe();"><button id="clear-board">Clear Board</button></a>
-  	<table width="520" height="520">
-  		<tr>
-  			<td id="s1" class="square" onclick="nextMove(this);"></td>
-  			<td id="s2" class="square" onclick="nextMove(this);"></td>		
-  			<td id="s3" class="square" onclick="nextMove(this);"></td>
-  		</tr>
-  		<tr>
-  			<td id="s4" class="square" onclick="nextMove(this);"></td>
-  			<td id="s5" class="square" onclick="nextMove(this);"></td>		
-  			<td id="s6" class="square" onclick="nextMove(this);"></td>
-  		</tr>
-  		<tr>
-  			<td id="s7" class="square" onclick="nextMove(this);"></td>
-  			<td id="s8" class="square" onclick="nextMove(this);"></td>		
-  			<td id="s9" class="square" onclick="nextMove(this);"></td>
-  		</tr>
-  	</table>
-  </div>
+ <div class="tic-tac-toe-board">
+ <a href="javascript:tictactoe();"><button id="clear-board">Clear Board</button></a>
+  <table width="520" height="520">
+    <tr>
+  	  <td id="s1" class="square" onclick="nextMove(this);"></td>
+  	  <td id="s2" class="square" onclick="nextMove(this);"></td>		
+  	  <td id="s3" class="square" onclick="nextMove(this);"></td>
+    </tr>
+    <tr>
+  	  <td id="s4" class="square" onclick="nextMove(this);"></td>
+  	  <td id="s5" class="square" onclick="nextMove(this);"></td>		
+  	  <td id="s6" class="square" onclick="nextMove(this);"></td>
+    </tr>
+    <tr>
+  	  <td id="s7" class="square" onclick="nextMove(this);"></td>
+  	  <td id="s8" class="square" onclick="nextMove(this);"></td>		
+  	  <td id="s9" class="square" onclick="nextMove(this);"></td>
+    </tr>
+  </table>
+</div>
 
 
 <script>
@@ -75,7 +75,7 @@
   }
 
   function setMessage(msg) {
-  	$("#message").text(msg)
+  	$("#message").text(msg).append('&nbsp;&nbsp;')
   }
 
   function switchTurn() {
