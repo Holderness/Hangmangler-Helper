@@ -20,9 +20,6 @@ h1 {
 	width: 1000px;
 }
 
-
-
-
 span {
 	border: 1.8px dashed;
 	padding: 1em;
@@ -61,26 +58,8 @@ td {
 }
 
 
-/* hangman */
 
-/* tic-tac-toe */
-
-/* profile */
-
-.hangmen-won {
-	margin-left: 100px;
-}
-
-/* home page */
-
-.clouds {
-	margin: 0;
-	position: absolute;
-	margin-bottom: 50px;
-}
-
-.cloud {
-}
+/* login */
 
 #signup {
 	text-align: center;
@@ -90,17 +69,9 @@ td {
 	text-align: center;
 }
 
-#message {
-	font-size: 1.5em;
-  float: left;
-  padding-left: 1em;
-  width: 15em;
-}
 
-#announcer-cow-cow {
-	float: left;
-}
 
+/* hangman */
 
 #scene {
 	float: left;
@@ -112,34 +83,6 @@ td {
 	margin-top: 7em;
 }
 
-#cow-cow {
-	float: right;
-}
-
-.button {
-	-webkit-appearance: none;
-	background-color: cornsilk;
-	border: 1.8px dashed;
-	font-size: 16px;
-	font-family: Garamond;
-	float: right;
-	margin-right: 1.2em;
-	width: 80px;
-	height: 35px;
-}
-
-#clear-board {
-  -webkit-appearance: none;
-	background-color: cornsilk;
-	border: 1.8px dashed;
-	font-size: 20px;
-	font-family: Garamond;
-	float: right;
-	margin-right: 8em;
-	width: 100px;
-	height: 50px;
-}
-
 #new-game {
 	-webkit-appearance: none;
 	background-color: cornsilk;
@@ -149,23 +92,6 @@ td {
 	margin-left: 957px;
 	width: 100px;
 	height: 50px;
-
-}
-
-#game-over {
-	padding-top: 1em;
-}
-
-#word {
-	padding-top: 30px;
-	font-size: 40px;
-}
-
-.cows {
-	margin-top: 10em;
-	float: left;
-	padding-left: 4em;
-	width: 38em;
 }
 
 #guess-display {
@@ -205,3 +131,85 @@ td {
 	width: 100px;
 	font-size: 40px;
 }
+
+#game-over {
+	padding-top: 1em;
+}
+
+#word {
+	padding-top: 30px;
+	font-size: 40px;
+}
+
+
+
+/* tic-tac-toe */
+
+#announcer-cow-cow {
+	float: left;
+}
+
+#message {
+	font-size: 1.5em;
+  float: left;
+  padding-left: 1em;
+  width: 15em;
+}
+
+#clear-board {
+  -webkit-appearance: none;
+	background-color: cornsilk;
+	border: 1.8px dashed;
+	font-size: 20px;
+	font-family: Garamond;
+	float: right;
+	margin-right: 8em;
+	width: 100px;
+	height: 50px;
+}
+
+
+
+/* profile */
+
+.hangmen-won {
+	margin-left: 100px;
+}
+
+
+
+/* home page */
+
+
+
+/* site-wide */
+
+.clouds {
+	margin: 0;
+	position: absolute;
+	margin-bottom: 50px;
+}
+
+#cow-cow {
+	float: right;
+}
+
+.button {
+	-webkit-appearance: none;
+	background-color: cornsilk;
+	border: 1.8px dashed;
+	font-size: 16px;
+	font-family: Garamond;
+	float: right;
+	margin-right: 1.2em;
+	width: 80px;
+	height: 35px;
+}
+
+.cows {
+	margin-top: 10em;
+	float: left;
+	padding-left: 4em;
+	width: 38em;
+}
+
