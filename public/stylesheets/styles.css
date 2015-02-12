@@ -63,7 +63,9 @@ td {
 
 
 .registration-form{
-	margin-left: 352px;
+	margin-left: 490px;
+	position: absolute;
+	width: 400px;
 	text-align: center;
 }
 
@@ -74,6 +76,10 @@ td {
 .registration-title {
 	margin-left: 190px;
 	text-align: center;
+}
+
+.errors {
+
 }
 
 
@@ -96,9 +102,10 @@ td {
 	border: 1.8px dashed;
 	font-size: 20px;
 	font-family: Garamond;
-	margin-left: 957px;
+	margin-left: 888px;
 	width: 100px;
 	height: 50px;
+	position: absolute;
 }
 
 #guess-display {

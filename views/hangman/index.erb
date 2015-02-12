@@ -81,19 +81,21 @@ $(function(){
 
 
   $(document).on('keyup', function(e){
-   if (e.which === 13) {
-     $('form#guess-box').submit();
-     return false;
-   } else {
-     $("input[name='guess']").val(String.fromCharCode(e.keyCode))
-   }
+    e.preventDefault();
+    if (e.which === 13) {
+      $('form#guess-box').submit();
+      return false;
+    } else {
+      $("input[name='guess']").val(String.fromCharCode(e.keyCode));
+    }
   });
 
   $(document).on('keyup', function(e){
+    e.preventDefault();
     if (e.which === 32) {
       $('#new-game').submit();
       $('#new-game').remove();
-      $('#game-over').text('Make a Guess!')
+      $('#game-over').text('Make a Guess!');
     return false;
     };
   });
